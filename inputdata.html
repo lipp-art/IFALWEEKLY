@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Data - MyProject</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            width: 300px;
+        }
+        img {
+            width: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        h2 {
+            margin: 10px 0;
+        }
+        p {
+            color: #cbd5f5;
+        }
+    </style>
+</head>
+
+<table border="1" spacing="0" cellpadding="10" bgcolor="white">
+    <tr>
+        <td>
+            <a href="index.html">Home</a>
+        </td>
+        <td>
+            <a href="profile.html">Profile</a>
+        </td>
+        <td>
+            <a href="contact.html">Contact</a>
+        </td>
+        <td>
+            <a href="Mahasiswa.html">Data Mahasiswa</a>
+        </td>
+        <td>
+            <a href="Latihan.html">Latihan</a>
+    </tr>
+
+</table>
+<h2>Input Data Mahasiswa</h2>
+
+<form>
+    <table cellspacing="5px">
+        <tr>
+            <td><label for="nama">Nama</label></td>
+            <td>:</td>
+            <td><input type="text" name="nama" id="nama"/></td>
+        </tr>
+        <tr>
+            <td><label for="uts">UTS</label></td>
+            <td>:</td>
+            <td><input type="number" name ="uts" id="uts"></td>
+        </tr>
+        <tr>
+            <td><label for="uas">UAS</label></td>
+            <td>:</td>
+            <td><input type="number" name ="uas" id="uas"></td>
+        </tr>
+        <tr>
+            <td><label for="tugas">Tugas</label></td>
+            <td>:</td>
+            <td><input type="number" name ="tugas" id="tugas"></td>
+        </tr>
+        <tr>
+            <td><label for="foto">Foto</label></td>
+            <td>:</td>
+            <td><input type="file" name="foto" id="foto"></td>
+        </tr>
+        </table>
+    <input type="submit" name="submit" value="Simpan Data">
+    <br>
+    <br>
+  
+<form>
+    <table>
+        <tr>
+            <td>Nama</td>
+            <td><input type="text" name="nama"></td>
+        </tr>
+        <tr>
+            <td>NIM</td>
+            <td><input type="number" name="nim"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>No HP</td>
+            <td><input type="tel" name="nohp"></td>
+        </tr>
+        <tr>
+            <td>Website Pribadi</td>
+            <td><input type="url" name="website"></td>
+        </tr>
+        <tr>
+            <td>Tanggal Lahir</td>
+            <td><input type="date" name="tgl_lahir"></td>
+        </tr>
+        <tr>
+            <td>Warna Favorit</td>
+            <td><input type="color" name="warna"></td>
+        </tr>
+        <tr>
+            <td>Tingkat Kepuasan</td>
+            <td><input type="range" name="kepuasan" min="1" max="10"></td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td>
+                <input type="radio" name="jk" value="Laki-laki"> Laki-laki
+                <input type="radio" name="jk" value="Perempuan"> Perempuan
+            </td>
+        </tr>
+        <tr>
+            <td>Hobi</td>
+            <td>
+                <input type="checkbox" name="hobi" value="Membaca"> Membaca<br>
+                <input type="checkbox" name="hobi" value="Olahraga"> Olahraga<br>
+                <input type="checkbox" name="hobi" value="Mengaji"> Mengaji
+            </td>
+        </tr>
+        <tr>
+            <td>Upload Foto</td>
+            <td><input type="file" name="foto"></td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td><textarea name="alamat" rows="4" cols="30"></textarea></td>
+        </tr>
+        <tr>
+            <td>Jurusan</td>
+            <td>
+                <select name="jurusan">
+                    <option value="">-- Pilih Jurusan --</option>
+                    <option value="Informatika">Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Teknik Komputer">Teknik Komputer</option>
+                    <option value="Teknik Elektro">Teknik Elektro</option>
+                    <option value="Teknik Mesin">Teknik Mesin</option>
+                    <option value="Teknik Industri">Teknik Industri</option>
+                    <option value="Teknik Lingkungan">Teknik Lingkungan</option>
+                    <option value="Teknik Sipil">Teknik Sipil</option>
+                    <option value="Teknik Perkapalan">Teknik Perkapalan</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
+
+</form>
+
+</html>
