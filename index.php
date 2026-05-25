@@ -41,19 +41,19 @@
 <table border="1" spacing="0" cellpadding="10" bgcolor="white">
     <tr>
         <td>
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
         </td>
         <td>
-            <a href="profile.html">Profile</a>
+            <a href="profile.php">Profile</a>
         </td>
         <td>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
         </td>
         <td>
-            <a href="Mahasiswa.html">Data Mahasiswa</a>
+            <a href="Mahasiswa.php">Data Mahasiswa</a>
         </td>
         <td>
-            <a href="Latihan.html">Latihan</a>
+            <a href="Latihan.php">Latihan</a>
         </td>
     </tr>
 
