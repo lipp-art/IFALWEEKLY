@@ -2,86 +2,141 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - MyProject</title>
+
     <style>
-        body {
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
             font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            margin: 0;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 40px;
+
+        body{
+            background:#0f172a;
+            color:white;
         }
-        h1 {
-            text-align: center;
+
+        /* Navbar */
+        .navbar{
+            background:#1e293b;
+            padding:18px 0;
+            text-align:center;
+            box-shadow:0 2px 10px rgba(0,0,0,0.2);
         }
-        form {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 10px;
+
+        .navbar a{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:bold;
+            margin:0 25px;
+            transition:0.3s;
         }
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 6px;
+
+        .navbar a:hover{
+            color:#38bdf8;
         }
-        button {
-            background: #38bdf8;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 6px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
+
+        .navbar a.active{
+            color:#38bdf8;
+            border-bottom:3px solid #38bdf8;
+            padding-bottom:5px;
         }
-        button:hover {
-            background: #0ea5e9;
+
+        /* Container */
+        .container{
+            width:80%;
+            max-width:700px;
+            margin:50px auto;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        /* Form */
+        form{
+            background:#1e293b;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+        }
+
+        label{
+            display:block;
+            margin-top:15px;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input,
+        textarea{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            outline:none;
+        }
+
+        textarea{
+            resize:none;
+        }
+
+        button{
+            background:#38bdf8;
+            border:none;
+            padding:12px;
+            width:100%;
+            border-radius:8px;
+            color:white;
+            font-weight:bold;
+            font-size:16px;
+            cursor:pointer;
+            margin-top:20px;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#0ea5e9;
         }
     </style>
 </head>
+
 <body>
-<table border="1" spacing="0" cellpadding="10" bgcolor="white">
-    <tr>
-        <td>
-            <a href="index.php">Home</a>
-        </td>
-        <td>
-            <a href="profile.php">Profile</a>
-        </td>
-        <td>
-            <a href="contact.php">Contact</a>
-        </td>
-        <td>
-            <a href="Mahasiswa.php">Data Mahasiswa</a>
-        </td>
-        <td>
-            <a href="Latihan.php">Latihan</a>
-        </td>
-    </tr>
-</table>
 
-<div class="container">
-    <h1>Hubungi Kami</h1>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.php">Home</a>
+        <a href="profile.php">Profile</a>
+        <a href="contact.php" class="active">Contact</a>
+        <a href="Mahasiswa.php">Data Mahasiswa</a>
+        <a href="Latihan.php">Latihan</a>
+    </div>
 
-    <form>
-        <label>Nama</label>
-        <input type="text" placeholder="Masukkan nama">
+    <!-- Contact Form -->
+    <div class="container">
 
-        <label>Email</label>
-        <input type="email" placeholder="Masukkan email">
+        <h1>Hubungi Kami</h1>
 
-        <label>Pesan</label>
-        <textarea rows="5" placeholder="Tulis pesan..."></textarea>
+        <form action="" method="post">
 
-        <button type="submit">Kirim</button>
-    </form>
-</div>
+            <label>Nama</label>
+            <input type="text" name="nama" placeholder="Masukkan nama">
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Masukkan email">
+
+            <label>Pesan</label>
+            <textarea name="pesan" rows="5" placeholder="Tulis pesan..."></textarea>
+
+            <button type="submit">Kirim</button>
+
+        </form>
+
+    </div>
 
 </body>
 </html>

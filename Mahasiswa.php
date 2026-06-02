@@ -1,96 +1,222 @@
+<?php
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "ifalweekly";
+
+    $conn = new mysqli($host, $username, $password, $database);
+
+    // if ($conn->connect_error) {
+    //     die("Connection failed: " . $conn->connect_error);
+    //     echo "gagal koneksi";
+    // }
+    // else {
+    //     echo "koneksi berhasil";
+    // }
+
+    $query = "SELECT * FROM mahasiswa";
+    $result = mysqli_query($conn, $query);
+
+    //mysqli_fetch_row
+    //mysqli_fetch_assoc
+    //mysqli_fetch_object
+    //mysqli_fetch_array
+
+    // $getData = mysqli_fetch_all($result, MYSQLI_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Data Mahasiswa-MyProject</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            padding: 50px;
-        }
-        .card {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            display: inline-block;
-            widtd: 300px;
-        }
-        img {
-            widtd: 120px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-        h2 {
-            margin: 10px 0;
-        }
-        p {
-            color: #cbd5f5;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Mahasiswa - MyProject</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* Navbar */
+.navbar{
+    background:#1e293b;
+    padding:18px 0;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    margin:0 25px;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#38bdf8;
+}
+
+.navbar a.active{
+    color:#38bdf8;
+    border-bottom:3px solid #38bdf8;
+    padding-bottom:5px;
+}
+
+/* Container */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+/* Card */
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* Tombol */
+.btn{
+    display:inline-block;
+    background:#38bdf8;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-bottom:20px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+}
+
+/* Table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    color:black;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+
+th, td{
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f3f4f6;
+}
+
+tr:hover{
+    background:#dbeafe;
+}
+
+/* Foto */
+img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* Aksi */
+.aksi a{
+    text-decoration:none;
+    font-weight:bold;
+    margin:0 5px;
+}
+
+.edit{
+    color:green;
+}
+
+.hapus{
+    color:red;
+}
+</style>
 </head>
-<table border="1" spacing="0" cellpadding="10" bgcolor="white">
-    <tr>
-        <td>
-            <a href="index.php">Home</a>
-        </td>
-        <td>
-            <a href="profile.php">Profile</a>
-        </td>
-        <td>
-            <a href="contact.php">Contact</a>
-        </td>
-        <td>
-            <a href="Mahasiswa.php">Data Mahasiswa</a>
-        </td>
-        <td>
-            <a href="Latihan.php">Latihan</a>
-    </tr>
 
-</table>
+<body>
 
-<table border="1" cellpadding="10">
-    <h1>Data Mahasiswa</h1>
-    <a href="inputdata.php">
-    <button>Tambah Data</button> 
-    </a>
-    <br>
-    <br>
-    <tr align="center"> 
-        <td>No</td>
-        <td>Nama</td>
-        <td>Jurusan</td>
-        <td>Email</td>
-        <td>No HP</td>
-        <td>Foto</td>
-        <td>Aksi</td>
-    </tr>
+<!-- Navbar -->
+<div class="navbar">
+    <a href="index.php">Home</a>
+    <a href="profile.php">Profile</a>
+    <a href="contact.php">Contact</a>
+    <a href="Mahasiswa.php" class="active">Data Mahasiswa</a>
+    <a href="Latihan.php">Latihan</a>
+</div>
 
+<!-- Konten -->
+<div class="container">
 
-    <tr align="center">
-        <td>1</td>
-        <td>Alif Tsaqif</td>
-        <td>Informatika</td>
-        <td>anomali@gmail.com</td>
-        <td>085262850505</td>
-        <td><img src="asset/images/Profile.jpeg" width="70px"></td>
-        <td>
-            <a href="editdata.php?id=1">Edit</a> |
-            <a href="deletedata.php?id=1" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-        </td>
-    </tr>
+    <div class="card">
 
-    <tr align="center">
-        <td>2</td>
-        <td>Nuwafa Sabilla</td>
-        <td> Manajemen</td>
-        <td>nuwafa@gmail.com</td>
-        <td>085262850506</td>
-        <td><img src="asset/images/koceng.jpg" width="70px"></td>
-    </tr>
-</table>
+        <h1>Data Mahasiswa</h1>
+
+        <a href="inputdata.php" class="btn">+ Tambah Data</a>
+
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Jurusan</th>
+                <th>Email</th>
+                <th>No HP</th>
+                <th>Foto</th>
+                <th>Aksi</th>
+            </tr>
+        
+            <?php
+            $i = 1;
+            while ($row = mysqli_fetch_assoc($result)) {
+
+            ?>
+            <tr>
+                <td><?= $i++; ?></td>
+                <td><?= $row['nama']; ?></td>
+                <td><?= $row['jurusan']; ?></td>
+                <td><?= $row['email']; ?></td>
+                <td><?= $row['no_hp']; ?></td>
+                <td><img src="asset/images/<?= $row['foto']; ?>" alt="Foto <?= $row['nama']; ?>"></td>
+                <td class="aksi">
+                    <a href="editdata.php?id=<?= $row['id']; ?>" class="edit">Edit</a>
+                    <a href="hapusdata.php?id=<?= $row['id']; ?>" class="hapus" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                </td>
+            </tr>
+            <?php } ?>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

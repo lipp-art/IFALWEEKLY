@@ -2,94 +2,143 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan - MyProject</title>
+
     <style>
-        body {
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
             font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            margin: 0;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 40px;
+
+        body{
+            background:#0f172a;
+            color:white;
         }
-        h1 {
-            text-align: center;
+
+        /* Navbar */
+        .navbar{
+            background:#1e293b;
+            padding:18px 0;
+            text-align:center;
+            box-shadow:0 2px 10px rgba(0,0,0,0.2);
         }
-        form {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 10px;
+
+        .navbar a{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:bold;
+            margin:0 25px;
+            transition:0.3s;
         }
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 6px;
+
+        .navbar a:hover{
+            color:#38bdf8;
         }
-        button {
-            background: #38bdf8;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 6px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
+
+        .navbar a.active{
+            color:#38bdf8;
+            border-bottom:3px solid #38bdf8;
+            padding-bottom:5px;
         }
-        button:hover {
-            background: #0ea5e9;
+
+        /* Container */
+        .container{
+            width:90%;
+            max-width:900px;
+            margin:40px auto;
+        }
+
+        /* Card */
+        .card{
+            background:#1e293b;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:25px;
+            color:#38bdf8;
+        }
+
+        /* Table */
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            color:black;
+        }
+
+        td{
+            border:1px solid #ccc;
+            padding:40px;
+            text-align:center;
+            font-weight:bold;
+        }
+
+        tr:hover{
+            background:#dbeafe;
+        }
+
+        .center{
+            background:#38bdf8;
+            color:white;
+            font-size:24px;
         }
     </style>
 </head>
 
-<table border="1" spacing="0" cellpadding="10" bgcolor="white">
-    <tr>
-        <td>
-            <a href="index.php">Home</a>
-        </td>
-        <td>
-            <a href="profile.php">Profile</a>
-        </td>
-        <td>
-            <a href="contact.php">Contact</a>
-        </td>
-        <td>
-            <a href="Mahasiswa.php">Data Mahasiswa</a>
-        </td>
-        <td>
-            <a href="Latihan.php">Latihan</a>
-        </td>
-    </tr>
-</table>
+<body>
 
-<table border="1" cellpadding="50px" align="center" width="50%">
-    <h1>Latihan</h1>
-    <tr align="center">
-        <td>1,1</td>
-        <td>1,2</td>
-        <td>1,3</td>
-        <td>1,4</td>
-    </tr>
-    <tr align="center">
-        <td>2,1</td>
-        <td colspan="2" rowspan="2" class="center" align="center">?</td>
-        <td>2,4</td>
-    </tr>
-    <tr align="center">
-        <td>3,1</td>
-        <td>3,4</td>
-    </tr>
-    <tr align="center">
-        <td>4,1</td>
-        <td>4,2</td>
-        <td>4,3</td>
-        <td>4,4</td>
-    </tr>
-</table>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.php">Home</a>
+        <a href="profile.php">Profile</a>
+        <a href="contact.php">Contact</a>
+        <a href="Mahasiswa.php">Data Mahasiswa</a>
+        <a href="Latihan.php" class="active">Latihan</a>
+    </div>
+
+    <!-- Konten -->
+    <div class="container">
+        <div class="card">
+
+            <h1>Latihan Tabel</h1>
+
+            <table>
+                <tr>
+                    <td>1,1</td>
+                    <td>1,2</td>
+                    <td>1,3</td>
+                    <td>1,4</td>
+                </tr>
+
+                <tr>
+                    <td>2,1</td>
+                    <td colspan="2" rowspan="2" class="center">?</td>
+                    <td>2,4</td>
+                </tr>
+
+                <tr>
+                    <td>3,1</td>
+                    <td>3,4</td>
+                </tr>
+
+                <tr>
+                    <td>4,1</td>
+                    <td>4,2</td>
+                    <td>4,3</td>
+                    <td>4,4</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
 
 </body>
 </html>
