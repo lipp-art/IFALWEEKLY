@@ -206,7 +206,7 @@ img{
                 <td><?= $row['no_hp']; ?></td>
                 <td><img src="asset/images/<?= $row['foto']; ?>" alt="Foto <?= $row['nama']; ?>"></td>
                 <td class="aksi">
-                    <a href="editdata.php?id=<?= $row['id']; ?>" class="edit">Edit</a>
+                    <a href="ubahdata.php?id=<?= $row['id']; ?>" class="edit">Edit</a>
                     <a href="hapusdata.php?id=<?= $row['id']; ?>" class="hapus" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                 </td>
             </tr>

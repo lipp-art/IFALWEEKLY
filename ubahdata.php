@@ -2,20 +2,24 @@
 
     require 'fungsi.php';
 
-    if(isset($_POST["submit"])){
-        $_FILES["foto"]["name"] = $_FILES["foto"]["name"];
+    $id = $_GET["id"];
 
-        if (tambahdata($_POST) > 0){
+    $query = "SELECT * FROM mahasiswa WHERE id = $id";
+    $mhs = tampildata($query)[0];
+
+    if(isset($_POST["submit"])){
+
+        if (ubahdata($_POST,$_FILES["foto"],$id) > 0){
             echo "
                 <script>
-                    alert('data berhasil ditambahkan');
+                    alert('data berhasil di ubah');
                     document.location.href = 'mahasiswa.php';
                 </script>
             ";
         } else {
             echo "
                 <script>
-                    alert('data gagal ditambahkan');
+                    alert('data gagal di ubah');
                     document.location.href = 'mahasiswa.php';
                 </script>
             ";
@@ -47,24 +51,24 @@
         <table>
             <tr>
                 <td><label for="nama">Nama :</label><br></td>
-                <td><input type="text" id="nama" name="nama" required></td>
+                <td><input type="text" id="nama" name="nama" value="<?= $mhs["nama"] ?>" required></td>
             </tr>
             <tr>
                <td> <label for="Nim">Nim :</label></td>
-               <td><input type="number" id="Nim" name="nim" required></td>
+               <td><input type="number" id="nim" name="nim" value="<?= $mhs["nim"] ?>" required></td>
             </tr>
 
             <tr>
                 <td><label for="jurusan">jurusan :</label></td>
-                <td><input type="text" id="jurusan" name="jurusan" required></td>
+                <td><input type="text" id="jurusan" name="jurusan" value="<?= $mhs["jurusan"] ?>" required></td>
             </tr>
             <tr>
                 <td><label for="email">email :</label></td>
-                <td><input type="email" id="email" name="email" required></td>
+                <td><input type="email" id="email" name="email" value="<?= $mhs["email"] ?>" required></td>
             </tr>
             <tr>
                 <td><label for="no_hp">Nomor HP :</label></td>
-                <td><input type="text" id="no_hp" name="no_hp" required></td>
+                <td><input type="text" id="no_hp" name="no_hp" value="<?= $mhs["no_hp"] ?>" required></td>
             </tr>
             <tr>
                 <td><label for="foto">Foto :</label></td>
